@@ -16,58 +16,60 @@ const TEMP_CONVERSION_RATE = 0.3105;
 const TEMP_CONVERSION_DATE = new Date();
 
 class Home extends Component {
-    handlePressBaseCurrency = () => {
-        console.log('press base');
-    }
+  handlePressBaseCurrency = () => {
+    console.log('press base');
+  }
 
-    handlePressQuoteCurrency = () => {
-        console.log('press quote');
-    }
+  handlePressQuoteCurrency = () => {
+    console.log('press quote');
+  }
 
-    handleTextChange = (text) => {
-        console.log('change text', text);
-    }
+  handleTextChange = (text) => {
+    console.log('change text', text);
+  }
 
-    handleSwapCurrencies = () => {
-        console.log('swap currencies');
-    }
+  handleSwapCurrencies = () => {
+    console.log('swap currencies');
+  }
 
-    handleOptionsPress = () => {
-        console.log('optiions press');
-    }
+  handleOptionsPress = () => {
+    console.log('optiions press');
+  }
 
-    render() { return(
-        <Container>
-            <StatusBar translucent={false} barStyle="light-content" />
-            <Header onPress={this.handleOptionsPress} />
-            <KeyboardAvoidingView behavior="padding">
-                <Logo />
-                <InputWithButton
-                buttonText={TEMP_BASE_CURRENCY}
-                onPress={this.handlePressBaseCurrency}
-                defaultValue={TEMP_BASE_PRICE}
-                keyboardType="numeric"
-                onChangeText={this.handleTextChange}
-                />
-                <InputWithButton
-                buttonText={TEMP_QUOTE_CURRENCY}
-                onPress={this.handlePressQuoteCurrency}
-                editable={false}
-                value={TEMP_QUOTE_PRICE}
-                />
-                <LastConverted 
-                date={TEMP_CONVERSION_DATE}
-                base={TEMP_BASE_CURRENCY}
-                quote={TEMP_QUOTE_CURRENCY}
-                conversionRate={TEMP_CONVERSION_RATE}
-                />
-                <ClearButton 
-                text="Reverse Currencies"
-                onPress={this.handleSwapCurrencies}
-                />
-            </KeyboardAvoidingView>
-        </Container>
-    )}
+  render() {
+    return (
+      <Container>
+        <StatusBar translucent={false} barStyle="light-content" />
+        <Header onPress={this.handleOptionsPress} />
+        <KeyboardAvoidingView behavior="padding">
+          <Logo />
+          <InputWithButton
+            buttonText={TEMP_BASE_CURRENCY}
+            onPress={this.handlePressBaseCurrency}
+            defaultValue={TEMP_BASE_PRICE}
+            keyboardType="numeric"
+            onChangeText={this.handleTextChange}
+          />
+          <InputWithButton
+            buttonText={TEMP_QUOTE_CURRENCY}
+            onPress={this.handlePressQuoteCurrency}
+            editable={false}
+            value={TEMP_QUOTE_PRICE}
+          />
+          <LastConverted
+            date={TEMP_CONVERSION_DATE}
+            base={TEMP_BASE_CURRENCY}
+            quote={TEMP_QUOTE_CURRENCY}
+            conversionRate={TEMP_CONVERSION_RATE}
+          />
+          <ClearButton
+            text="Reverse Currencies"
+            onPress={this.handleSwapCurrencies}
+          />
+        </KeyboardAvoidingView>
+      </Container>
+    );
+  }
 }
 
 export default Home;
