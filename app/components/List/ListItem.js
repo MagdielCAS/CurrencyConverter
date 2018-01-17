@@ -5,7 +5,7 @@ import { View, Text, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import Icon from './Icon';
 
-const ListItem = ({ 
+const ListItem = ({
   text,
   onPress,
   selected = false,
