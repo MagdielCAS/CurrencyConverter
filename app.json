@@ -1,5 +1,13 @@
 {
-  "expo": {
-    "sdkVersion": "23.0.0"
-  }
-}
+    "expo": {
+        "sdkVersion": "23.0.0",
+        "name": "Currency Converter",
+        "version": "1.0.0",
+        "slug": "currency-converter",
+        "ios": {
+            "bundleIdentifier": "ninja.venal.learning.CurrencyConverter"
+        },
+        "android": {
+            "package": "ninja.venal.learning.CurrencyConverter"
+        }
+    }
